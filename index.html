@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dobinski & Lima Arquitetura | Estudo Institucional</title>
+  <meta name="description" content="Apresentação do estudo de marca, economia e modelo de atuação da Dobinski & Lima Arquitetura.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navegação Principal -->
+  <nav class="main-navbar">
+    <div class="site-container navbar-inner">
+      <a href="#inicio" class="nav-brand-group">
+        <div class="brand-symbol">DL</div>
+        <div class="brand-titles">
+          <h1>DOBINSKI & LIMA</h1>
+          <span>Arquitetura & Urbanismo</span>
+        </div>
+      </a>
+
+      <div class="nav-menu-links">
+        <a href="#quiz-resumo" class="nav-item-link">Quiz de Resumo</a>
+        <a href="#marca" class="nav-item-link">Estudo de Marca</a>
+        <a href="#missao-visao" class="nav-item-link">Missão & Visão</a>
+        <a href="#economia" class="nav-item-link">Escassez & Recursos</a>
+        <a href="#fatores" class="nav-item-link">Comportamento</a>
+        <a href="#equipe" class="nav-item-link">Equipe</a>
+        <a href="#contato" class="btn-comfortable btn-dark">Contato</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero / Banner Editorial Confortável -->
+  <header class="hero-comfortable" id="inicio">
+    <div class="site-container hero-grid-2">
+      <div>
+        <span class="eyebrow-pill"><i class="fa-solid fa-compass-drafting"></i> Estudo Institucional</span>
+        <h1 class="hero-title-main">Arquitetura de qualidade para todas as realidades.</h1>
+        <p class="hero-intro">
+          Nosso objetivo é fazer com que mais pessoas possam ter acesso à arquitetura, desenvolvendo projetos funcionais com rigor técnico, organização e sustentabilidade financeira.
+        </p>
+
+        <div class="hero-quote-card">
+          <strong>Equilíbrio Financeiro & Social:</strong><br>
+          "Atendemos tanto clientes com mais dinheiro quanto aqueles que precisam de opções mais baratas. Para equilibrar, ganhamos mais nos projetos mais caros e menos nos mais acessíveis."
+        </div>
+
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a href="#quiz-resumo" class="btn-comfortable btn-dark">
+            <i class="fa-solid fa-circle-question"></i> Responder Quiz de Resumo
+          </a>
+          <a href="#marca" class="btn-comfortable btn-outline">
+            <i class="fa-solid fa-book-open"></i> Explorar Estudo
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-image-wrapper">
+        <img src="assets/images/hero.jpg" alt="Projeto Dobinski & Lima Arquitetura" class="hero-img-showcase">
+        <div class="hero-float-badge">
+          <i class="fa-solid fa-wallet"></i>
+          <div>
+            <span>Opção Acessível Base</span>
+            <strong>R$ 600,00</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- QUIZ DE RESUMO INTERATIVO (ALTERNATIVAS DIVERSIFICADAS A, B, C, D) -->
+  <section class="section-wrapper quiz-section" id="quiz-resumo">
+    <div class="site-container">
+      <div style="text-align: center; margin-bottom: 2.5rem;">
+        <span class="eyebrow-pill"><i class="fa-solid fa-lightbulb"></i> Interatividade & Fixação</span>
+        <h2 class="section-headline">Quiz de Resumo da Empresa</h2>
+        <p class="section-description" style="margin-bottom: 0;">
+          Teste sua compreensão sobre o estudo de marca, a gestão econômica de escassez e a equipe com alternativas diversificadas e feedback imediato.
+        </p>
+      </div>
+
+      <div class="quiz-main-card">
+        <div class="quiz-header-bar">
+          <span id="quizCounterDisplay">Pergunta 1 de 5</span>
+          <span class="quiz-score-badge">Pontuação: <span id="quizScoreDisplay">0</span> / 5</span>
+        </div>
+
+        <div class="quiz-track">
+          <div class="quiz-bar-fill" id="quizProgressBar"></div>
+        </div>
+
+        <!-- Pergunta Ativa -->
+        <div id="quizQuestionBox">
+          <h3 class="quiz-question-title" id="quizQuestionTitle">Carregando pergunta...</h3>
+          <div class="quiz-options-container" id="quizOptionsContainer">
+            <!-- As alternativas A, B, C, D são geradas dinamicamente -->
+          </div>
+
+          <div class="quiz-feedback-banner" id="quizFeedbackBanner"></div>
+
+          <div style="display: flex; justify-content: flex-end; margin-top: 1.5rem;">
+            <button class="btn-comfortable btn-dark" id="btnNextQuiz" style="display: none;" onclick="avancarQuiz()">
+              Próxima Pergunta <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Tela de Pontuação Final -->
+        <div class="quiz-result-final" id="quizResultFinal">
+          <span class="eyebrow-pill">Desempenho</span>
+          <div class="score-display-huge" id="scoreDisplayHuge">5 / 5</div>
+          <h3 id="quizResultHeading" style="font-size: 1.6rem; margin-bottom: 0.5rem;">Excelente resultado!</h3>
+          <p id="quizResultText" style="color: var(--c-grey); font-size: 0.95rem; margin-bottom: 2rem; max-width: 520px; margin-left: auto; margin-right: auto;">
+            Você dominou perfeitamente todos os conceitos de estudo de marca, tomada de decisão com recursos limitados e o papel da nossa equipe!
+          </p>
+          <button class="btn-comfortable btn-outline" onclick="reiniciarQuizCompleto()">
+            <i class="fa-solid fa-rotate-left"></i> Refazer o Quiz
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESTUDO DE MARCA -->
+  <section class="section-wrapper brand-section" id="marca">
+    <div class="site-container">
+      <div style="text-align: center;">
+        <span class="eyebrow-pill">Estudo de Marca</span>
+        <h2 class="section-headline">Propósito & Modelo de Negócio</h2>
+        <p class="section-description">
+          Como organizamos nosso escritório para unir impacto social positivo e solidez financeira.
+        </p>
+      </div>
+
+      <div class="pillars-grid">
+        <div class="pillar-card-box highlight">
+          <span class="pillar-badge-num">01. INCLUSÃO & QUALIDADE</span>
+          <h3>Ajudar e ter Lucro</h3>
+          <p>
+            O estudo de marca da nossa empresa de arquitetura mostra que queremos ajudar as pessoas e também ter lucro. Fazemos projetos para todos os tipos de clientes, inclusive para quem tem menos dinheiro, com preços mais baixos, mas <strong>sem perder a qualidade</strong>.
+          </p>
+        </div>
+
+        <div class="pillar-card-box">
+          <span class="pillar-badge-num">02. EQUILÍBRIO DE GANHOS</span>
+          <h3>Equilíbrio Financeiro</h3>
+          <p>
+            Atendemos tanto clientes com mais dinheiro quanto aqueles que precisam de opções mais baratas. Para equilibrar, <strong>ganhamos mais nos projetos mais caros e menos nos mais acessíveis</strong>. Assim, conseguimos ajudar mais pessoas e manter a empresa funcionando bem.
+          </p>
+        </div>
+
+        <div class="pillar-card-box">
+          <span class="pillar-badge-num">03. ACESSO AMPLIADO</span>
+          <h3>Democratização Real</h3>
+          <p>
+            Nosso objetivo é fazer com que mais pessoas possam ter acesso à arquitetura, proporcionando espaços inteligentes, conforto térmico, segurança e estética cuidadosa em todas as escalas.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSÃO & VISÃO -->
+  <section class="section-wrapper mv-section-clean" id="missao-visao">
+    <div class="site-container">
+      <div class="mv-grid-layout">
+        <div class="mv-card-clean">
+          <span class="eyebrow-pill">Diretriz Social</span>
+          <h3 style="font-size: 1.6rem; margin-bottom: 0.5rem;">Nossa Missão</h3>
+          <p class="mv-quote-text">
+            "Nossa missão é fazer com que mais pessoas possam ter acesso à arquitetura, ajudando assim, pessoas com baixa renda mesmo não tendo tanto lucro na venda dos projetos mais acessíveis."
+          </p>
+          <ul class="mv-bullets">
+            <li><i class="fa-solid fa-check"></i> Democratização e inclusão pelo design funcional</li>
+            <li><i class="fa-solid fa-check"></i> Projetos realistas que respeitam o orçamento familiar</li>
+          </ul>
+        </div>
+
+        <div class="mv-card-clean">
+          <span class="eyebrow-pill">Futuro & Gestão</span>
+          <h3 style="font-size: 1.6rem; margin-bottom: 0.5rem;">Nossa Visão</h3>
+          <p class="mv-quote-text">
+            "Nossa visão é crescer como uma empresa de arquitetura reconhecida pela qualidade dos projetos e por oferecer opções acessíveis. Queremos ajudar diferentes pessoas a realizarem seus projetos, sem perder o foco no lucro e na organização. No futuro, buscamos ser referência por unir impacto social e sucesso financeiro, sempre usando bem os recursos e atendendo às necessidades dos clientes."
+          </p>
+          <ul class="mv-bullets">
+            <li><i class="fa-solid fa-check"></i> Referência em custo-benefício e organização</li>
+            <li><i class="fa-solid fa-check"></i> Gestão eficiente de custos e prazos de entrega</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEMAS ECONÔMICOS FUNDAMENTAIS & ESCASSEZ -->
+  <section class="section-wrapper economy-section" id="economia">
+    <div class="site-container">
+      <div style="text-align: center;">
+        <span class="eyebrow-pill">Economia Aplicada</span>
+        <h2 class="section-headline">Problemas Econômicos e Escassez</h2>
+        <p class="section-description">
+          Como a escassez de recursos orienta a escolha consciente dos bens e serviços a serem produzidos.
+        </p>
+      </div>
+
+      <div class="economy-card-full">
+        <div>
+          <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Decisão Orçamentária: Produto A vs Produto B</h3>
+          <p style="color: var(--c-grey); font-size: 0.95rem; margin-bottom: 1.5rem;">
+            Considerando um orçamento disponível de <strong>R$ 700,00</strong>:
+          </p>
+
+          <div class="product-compare-item approved">
+            <div class="prod-header">
+              <strong>Produto A (Decisão Correta)</strong>
+              <span class="prod-price">R$ 600,00</span>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--c-dark);">
+              A empresa <strong>deve produzir o Produto A</strong>, porque ele custa R$ 600,00 e está dentro do orçamento de R$ 700,00.
+            </p>
+          </div>
+
+          <div class="product-compare-item rejected">
+            <div class="prod-header">
+              <strong>Produto B (Inviável no Cenário)</strong>
+              <span class="prod-price">R$ 800,00</span>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--c-grey);">
+              Já o <strong>Produto B custa R$ 800,00</strong>, então não pode ser produzido com os recursos disponíveis.
+            </p>
+          </div>
+
+          <p style="font-size: 0.85rem; color: var(--c-grey); margin-top: 1rem; font-style: italic;">
+            "Isso mostra a escassez, pois a empresa precisa escolher o que produzir com o dinheiro limitado."
+          </p>
+        </div>
+
+        <div class="scarcity-card-dark">
+          <div>
+            <h4>Procura e Escassez</h4>
+            <p>
+              No nosso projeto de arquitetura, a procura pelos serviços varia conforme a condição das pessoas. Por isso, oferecemos opções mais acessíveis para quem tem menos dinheiro, sem deixar de buscar lucro.
+            </p>
+            <p>
+              A escassez faz a gente planejar melhor e usar bem os recursos. Também podemos usar ideias como <strong>vagas limitadas</strong> para aumentar o interesse, equilibrando ajuda social e ganhos da empresa.
+            </p>
+          </div>
+
+          <div>
+            <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: #CBD5E1; display: block; margin-bottom: 0.5rem;">
+              Controle de Vagas Sociais do Mês:
+            </span>
+            <div class="slots-grid-5">
+              <div class="slot-item taken">Vaga 1</div>
+              <div class="slot-item taken">Vaga 2</div>
+              <div class="slot-item taken">Vaga 3</div>
+              <div class="slot-item open">Vaga 4 (Aberta)</div>
+              <div class="slot-item open">Vaga 5 (Aberta)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FATORES DE INFLUÊNCIA NO CONSUMIDOR -->
+  <section class="section-wrapper factors-section" id="fatores">
+    <div class="site-container">
+      <div style="text-align: center;">
+        <span class="eyebrow-pill">Comportamento do Consumidor</span>
+        <h2 class="section-headline">Fatores que Influenciam os Clientes</h2>
+        <p class="section-description">
+          No nosso projeto de arquitetura, os clientes podem ser influenciados de várias formas:
+        </p>
+      </div>
+
+      <div class="factors-grid-4">
+        <div class="factor-card-item">
+          <span class="factor-badge">01. Cultural</span>
+          <h4>Fatores Culturais</h4>
+          <p>
+            Pela cultura, muitas pessoas querem ter uma casa bonita e organizada.
+          </p>
+        </div>
+
+        <div class="factor-card-item">
+          <span class="factor-badge">02. Social</span>
+          <h4>Fatores Sociais</h4>
+          <p>
+            Pela sociedade, a opinião de amigos, família e o que está na moda também influencia.
+          </p>
+        </div>
+
+        <div class="factor-card-item">
+          <span class="factor-badge">03. Pessoal</span>
+          <h4>Fatores Pessoais</h4>
+          <p>
+            Nos fatores pessoais, entram o dinheiro e o estilo de vida, então opções mais baratas atraem mais gente.
+          </p>
+        </div>
+
+        <div class="factor-card-item">
+          <span class="factor-badge">04. Psicológico</span>
+          <h4>Fatores Psicológicos</h4>
+          <p>
+            Já nos fatores psicológicos, o desejo de conforto e segurança faz as pessoas procurarem nossos serviços.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIMULADOR DE PROJETO -->
+  <section class="section-wrapper simulator-section" id="simulador">
+    <div class="site-container">
+      <div class="sim-box-grid">
+        <div>
+          <span class="eyebrow-pill">Calculadora Rápida</span>
+          <h2 style="font-size: 2rem; margin-bottom: 0.5rem;">Simulador de Orçamento</h2>
+          <p style="color: var(--c-grey); font-size: 0.95rem; margin-bottom: 1.5rem;">
+            Ajuste a metragem e modalidade para ter uma estimativa do projeto.
+          </p>
+
+          <div class="form-group-sim">
+            <label for="simModalidade">Linha de Projeto:</label>
+            <select id="simModalidade" class="sim-input" onchange="atualizarSimulador()">
+              <option value="social">Linha Acessível (a partir de R$ 600,00)</option>
+              <option value="premium">Linha Premium (Design Autoral & 3D)</option>
+            </select>
+          </div>
+
+          <div class="form-group-sim">
+            <label for="simAreaRange">Área Estimada: <span id="simAreaDisplay" style="color: var(--c-dark); font-weight: 800;">45 m²</span></label>
+            <input type="range" id="simAreaRange" min="15" max="200" value="45" step="5" class="sim-input" style="padding: 0.2rem;" oninput="atualizarSimulador()">
+          </div>
+
+          <div class="form-group-sim">
+            <label for="simTipoEspaco">Tipo de Imóvel:</label>
+            <select id="simTipoEspaco" class="sim-input" onchange="atualizarSimulador()">
+              <option value="apartamento">Apartamento Residencial</option>
+              <option value="casa">Casa Residencial</option>
+              <option value="comodo">Cômodo / Reforma Pontual</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="sim-result-card-dark">
+          <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: #CBD5E1;">Investimento Estimado</span>
+          <div class="sim-price-huge" id="simPrecoFinal">R$ 600,00</div>
+          <p id="simNota" style="font-size: 0.85rem; color: #D2D6DF; margin-bottom: 1.5rem;">
+            Plano Acessível • Projetado para caber no orçamento de R$ 700,00.
+          </p>
+          <button class="btn-comfortable btn-sand" style="width: 100%;" onclick="enviarSimulacaoZap()">
+            <i class="fa-brands fa-whatsapp"></i> Conversar com a Equipe
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EQUIPE & CARGOS -->
+  <section class="section-wrapper team-section" id="equipe">
+    <div class="site-container">
+      <div style="text-align: center;">
+        <span class="eyebrow-pill">Estrutura Organizacional</span>
+        <h2 class="section-headline">Cargos da Empresa e Ocupação</h2>
+        <p class="section-description">
+          Conheça os profissionais responsáveis pelas áreas técnica, de gestão e de comunicação.
+        </p>
+      </div>
+
+      <div class="team-grid-3">
+        <!-- Kevelin Dobinski -->
+        <div class="team-card-profile">
+          <div class="team-avatar-initials">KD</div>
+          <span class="team-role-pill">Arquiteto</span>
+          <h3>Kevelin Dobinski</h3>
+          <p>
+            Responsável pelos projetos arquitetônicos, plantas técnicas, ergonomia, estética e soluções funcionais para todos os perfis de clientes.
+          </p>
+        </div>
+
+        <!-- Isabella de Lima -->
+        <div class="team-card-profile">
+          <div class="team-avatar-initials">IL</div>
+          <span class="team-role-pill">Gerenciador de Projeto</span>
+          <h3>Isabella de Lima</h3>
+          <p>
+            Responsável pelo controle de prazos, organização dos recursos financeiros, cronogramas e conformidade com o orçamento disponível.
+          </p>
+        </div>
+
+        <!-- Isabele dos Anjos -->
+        <div class="team-card-profile">
+          <div class="team-avatar-initials">IA</div>
+          <span class="team-role-pill">Analista de Marketing Digital</span>
+          <h3>Isabele dos Anjos</h3>
+          <p>
+            Responsável pela comunicação estratégica, redes sociais, atração de clientes e divulgação da proposta de arquitetura acessível e sustentável.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="section-wrapper contact-section" id="contato">
+    <div class="site-container">
+      <div class="contact-box-grid">
+        <div class="contact-info-col">
+          <span class="eyebrow-pill">Atendimento</span>
+          <h3>Fale com a nossa equipe</h3>
+          <p>
+            Entre em contato para tirar dúvidas sobre a linha acessível ou agendar uma reunião de projeto.
+          </p>
+
+          <div class="contact-item-row">
+            <i class="fa-solid fa-envelope"></i>
+            <div>
+              <strong>E-mail:</strong>
+              <div>contato@dobinskilima.com.br</div>
+            </div>
+          </div>
+
+          <div class="contact-item-row">
+            <i class="fa-brands fa-whatsapp"></i>
+            <div>
+              <strong>WhatsApp:</strong>
+              <div>(41) 99999-8888</div>
+            </div>
+          </div>
+
+          <div class="contact-item-row">
+            <i class="fa-solid fa-clock"></i>
+            <div>
+              <strong>Horário:</strong>
+              <div>Segunda a Sexta, das 08h às 18h</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <form id="cleanContactForm" onsubmit="enviarMensagemContato(event)">
+            <input type="text" class="input-field-custom" placeholder="Seu nome completo" required>
+            <input type="tel" class="input-field-custom" placeholder="WhatsApp / Telefone" required>
+            <textarea rows="3" class="input-field-custom" placeholder="Descreva brevemente sua necessidade..." required></textarea>
+            <button type="submit" class="btn-comfortable btn-dark" id="btnSubmitContact">Enviar Mensagem</button>
+            <div id="contactSuccessMsg" style="display: none; margin-top: 1rem; color: #2C6E49; font-size: 0.9rem; font-weight: 600;">
+              <i class="fa-solid fa-check"></i> Mensagem enviada com sucesso! Entraremos em contato em breve.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="site-footer">
+    <div class="site-container">
+      <div class="footer-content-row">
+        <div>
+          <h2 style="font-size: 1.2rem; color: #FFFFFF; font-weight: 800;">DOBINSKI & LIMA ARQUITETURA</h2>
+          <p style="font-size: 0.85rem; color: #CBD5E1; margin-top: 0.2rem;">Impacto Social, Qualidade & Sustentabilidade Financeira</p>
+        </div>
+        <div>
+          Equipe: <strong>Kevelin Dobinski</strong>, <strong>Isabella de Lima</strong> e <strong>Isabele dos Anjos</strong>
+        </div>
+      </div>
+      <div class="footer-bottom-copy">
+        &copy; 2026 Dobinski & Lima Arquitetura. Todos os direitos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
