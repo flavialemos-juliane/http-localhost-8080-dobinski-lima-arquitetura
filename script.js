@@ -1,5 +1,5 @@
 /**
- * DOBINSKI & LIMA ARQUITETURA
+ * IKI'S ARQUITETURA
  * Script de Lógica do Quiz com Alternativas Diversificadas (A, B, C, D)
  */
 
@@ -222,7 +222,7 @@ function enviarSimulacaoZap() {
   const modEl = document.getElementById('simModalidade');
   const modText = modEl ? modEl.options[modEl.selectedIndex].text : 'Linha Acessível';
 
-  const texto = `Olá, Equipe Dobinski & Lima! Realizei uma simulação:\n- Modalidade: ${modText}\n- Área: ${areaVal} m²\n- Estimativa: ${preco}\n\nGostaria de mais informações!`;
+  const texto = `Olá, Equipe IKI'S Arquitetura! Realizei uma simulação:\n- Modalidade: ${modText}\n- Área: ${areaVal} m²\n- Estimativa: ${preco}\n\nGostaria de mais informações!`;
   window.open(`https://wa.me/5541999998888?text=${encodeURIComponent(texto)}`, '_blank');
 }
 
@@ -245,9 +245,9 @@ function enviarMensagemContato(e) {
 // Inicialização
 document.addEventListener('DOMContentLoaded', () => {
   // Garante a exibição do nome da empresa na barra de endereços (URL)
-  if (window.location.protocol.startsWith('http') && !window.location.pathname.includes('dobinski-lima')) {
+  if (window.location.protocol.startsWith('http') && !window.location.pathname.includes('ikis-arquitetura')) {
     try {
-      window.history.replaceState(null, '', '/dobinski-lima-arquitetura');
+      window.history.replaceState(null, '', '/ikis-arquitetura');
     } catch (e) {
       console.log(e);
     }

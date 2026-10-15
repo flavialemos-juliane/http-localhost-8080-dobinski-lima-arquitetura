@@ -13,20 +13,30 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
     def do_GET(self):
         parsed_path = urllib.parse.urlparse(self.path).path
 
-        # Se acessar a raiz ou index.html, redireciona para a URL com o nome da empresa
+        # Se acessar a raiz ou index.html, redireciona para a URL oficial da empresa
         if parsed_path in ['/', '/index.html']:
             self.send_response(302)
-            self.send_header('Location', '/dobinski-lima-arquitetura')
+            self.send_header('Location', '/ikis-arquitetura')
             self.end_headers()
             return
 
-        # Se acessar com o nome da empresa
-        if parsed_path in ['/dobinski-lima', '/dobinski-lima/', '/dobinski-lima-arquitetura', '/dobinski-lima-arquitetura/']:
+        # Rotas com o nome da empresa
+        company_routes = [
+            '/ikis-arquitetura', '/ikis-arquitetura/',
+            '/ikis', '/ikis/',
+            '/dobinski-lima-arquitetura', '/dobinski-lima-arquitetura/',
+            '/dobinski-lima', '/dobinski-lima/'
+        ]
+        if parsed_path in company_routes:
             self.path = '/index.html'
             return super().do_GET()
 
-        # Se solicitar arquivos estáticos dentro do prefixo da empresa
-        for prefix in ['/dobinski-lima-arquitetura/', '/dobinski-lima/']:
+        # Servir arquivos estáticos sob qualquer um dos prefixos
+        prefixes = [
+            '/ikis-arquitetura/', '/ikis/',
+            '/dobinski-lima-arquitetura/', '/dobinski-lima/'
+        ]
+        for prefix in prefixes:
             if self.path.startswith(prefix):
                 self.path = '/' + self.path[len(prefix):]
                 return super().do_GET()
@@ -36,5 +46,5 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
 if __name__ == '__main__':
     socketserver.TCPServer.allow_reuse_address = True
     with socketserver.TCPServer(("", PORT), CustomHandler) as httpd:
-        print(f"Servidor ativo em http://localhost:{PORT}/dobinski-lima-arquitetura")
+        print(f"Servidor IKI'S ARQUITETURA ativo em http://localhost:{PORT}/ikis-arquitetura")
         httpd.serve_forever()
